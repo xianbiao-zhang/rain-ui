@@ -9,3 +9,4 @@ export { default as Space } from './components/space';
 export { default as Image } from './components/image';
 export { default as Modal } from './components/modal';
 export { default as Drawer } from './components/drawer';
+export { default as Menu } from './components/Menu';
