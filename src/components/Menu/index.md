@@ -10,7 +10,7 @@ nav:
   path: /components
 ---
 
-# Button 按钮
+# Menu 菜单
 
 按钮，用于开始一个操作
 

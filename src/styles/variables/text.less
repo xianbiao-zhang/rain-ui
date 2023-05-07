@@ -1,5 +1,44 @@
 :root {
-  --rain-font-size-base: 14px; // 主字号
+  --rain-font-family-sans-serif: -apple-system, blinkmacsystemfont, 'Segoe UI', roboto,
+    'Helvetica Neue', arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+    'Segoe UI Symbol', 'Noto Color Emoji';
+  // 字体大小
+  --rain-font-size-base: 1rem;
+  --rain-font-size-lg: var(--rain-font-size-base) * 1.25;
+  --rain-font-size-sm: var(--rain-font-size-base) * 0.875;
+
+  // 字重
+  --rain-font-weight-lighter: lighter;
+  --rain-font-weight-light: 300;
+  --rain-font-weight-normal: 400;
+  --rain-font-weight-bold: 700;
+  --rain-font-weight-bolder: bolder;
+
+  // 行高
+  --rain-height-base: 1.5;
+  --rain-height-lg: 2;
+  --rain-height-sm: 1.25;
+
+  // 边框 和 border radius
+  --rain-border-width: 1px;
+  --rain-border-color: #d9d9d9;
+  --rain-border-radius: 0.25rem;
+  --rain-border-radius-lg: 0.3rem;
+  --rain-border-radius-sm: 0.2rem;
+
+  // 不同大小输入框的 padding
+  --rain-padding-y: 0.375rem;
+  --rain-padding-x: 0.75rem;
+  --rain-padding-y-sm: 0.25rem;
+  --rain-padding-x-sm: 0.5rem;
+  --rain-padding-y-lg: 0.5rem;
+  --rain-padding-x-lg: 1rem;
+
+  // 不同类型的 box shadow
+  --rain-shadow-sm: 0 0.125rem 0.25rem rgba(#000, 0.075);
+  --rain-shadow: 0 0.5rem 1rem rgba(#000, 15);
+  --rain-shadow-lg: 0 1rem 3rem rgba(#000, 175);
+  --rain-shadow-inset: inset 1px 2px rgba(#000, 0.075);
   --rain-heading-color: #000000e0; // 标题色
   --rain-text-color: #000000d9; // 主文本色
   --rain-text-color-secondary: #00000073; // 次文本色
@@ -9,12 +48,48 @@
   --rain-box-shadow-base: 0 3px 6px -4px #0000001f, 0 6px 16px 0 #00000014, 0 9px 28px 8px #0000000d; // 浮层阴影
   --rain-background-color-base: #fafafa; // 背景色
 }
+@font-family-base: var(--rain-font-family-sans-serif);
+// 字体大小
 @font-size-base: var(--rain-font-size-base);
+@font-size-lg: var(--rain-font-size-lg);
+@font-size-sm: var(--rain-font-size-sm);
+
+// 字重
+@font-weight-lighter: var(--rain-font-weight-lighter);
+@font-weight-light: var(--rain-font-weight-light);
+@font-weight-base: var(--rain-font-weight-normal);
+@font-weight-bold: var(--rain-font-weight-bold);
+@font-weight-bolder: var(--rain-font-weight-bolder);
+
+// 行高
+@line-height-base: var(--rain-height-base);
+@line-height-lg: var(--rain-height-lg);
+@line-height-sm: var(--rain-height-sm);
+
+// 不同大小的 padding
+@padding-y: var(--rain-padding-y);
+@padding-x: var(--rain-padding-x);
+@padding-y-sm: var(--rain-padding-y-sm);
+@padding-x-sm: var(--rain-padding-x-sm);
+@padding-y-lg: var(--rain-padding-y-lg);
+@padding-x-lg: var(--rain-padding-x-lg);
+
+// 边框 和 bodrder radius
+@border-width: var(--rain-border-width);
+@border-color-base: var(--rain-border-color);
+@border-radius-base: var(--rain-border-radius);
+@border-radius-lg: var(--rain-border-radius-lg);
+@border-radius-sm: var(--rain-border-radius-sm);
+
+// 不同类型的 box shadow
+@shadow-sm: var(--rain-shadow-sm);
+@shadow: var(--rain-shadow);
+@shadow-lg: var(--rain-shadow-lg);
+@shadow-inset: var(--rain-shadow-inset);
+
 @heading-color: var(--rain-heading-color);
 @text-color: var(--rain-text-color);
 @text-color-secondary: var(--rain-text-color-secondary);
 @disabled-color: var(--rain-disabled-color);
-@border-radius-base: var(--rain-border-radius-base);
-@border-color-base: var(--rain-border-color-base);
 @box-shadow-base: var(--rain-box-shadow-base);
 @background-color-base: var(--rain-background-color-base);

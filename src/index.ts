@@ -10,3 +10,5 @@ export { default as Image } from './components/image';
 export { default as Modal } from './components/modal';
 export { default as Drawer } from './components/drawer';
 export { default as Menu } from './components/Menu';
+export { default as Icon } from './components/Icon';
+export { default as Input } from './components/Input';

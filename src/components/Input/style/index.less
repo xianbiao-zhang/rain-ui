@@ -1,0 +1,91 @@
+@import '../../../styles/variables/index.less';
+@import '../../../styles/color/colors.less';
+
+.rain-input-wrapper {
+  position: relative;
+  display: flex;
+  width: 100%;
+  margin-bottom: 30px;
+  .icon-wrapper {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 100%;
+    color: @gray-8;
+    svg {
+      color: @gray-7;
+    }
+  }
+}
+
+.icon-wrapper + .rain-input-inner {
+  padding-right: 35px;
+}
+
+.rain-input-inner {
+  width: 100%;
+  padding: @padding-y, @padding-x;
+  color: @gray-8;
+  font-weight: @font-weight-base;
+  font-size: @font-size-base;
+  font-family: @font-family-base;
+  line-height: @line-height-base;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: @border-width solid @border-color-base;
+  border-radius: @border-radius-base;
+  box-shadow: @shadow-inset;
+  transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+
+  &:focus {
+    color: @gray-8;
+    background-color: #fff;
+    border-color: lighten(#5e7ce0, 25%);
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(@primary-color, 0.25);
+  }
+
+  &::placeholder {
+    color: @gray-7;
+    opacity: 1;
+  }
+
+  &:disabled,
+  &[read-only] {
+    background-color: @gray-3;
+    border-color: transparent;
+  }
+}
+
+.rain-input-group-prepend,
+.rain-input-group-append {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0;
+  padding: @padding-y @padding-x;
+  color: @gray-8;
+  font-weight: @font-weight-base;
+  font-size: @font-size-base;
+  line-height: @line-height-base;
+  white-space: nowrap;
+  text-align: center;
+  background-color: @gray-3;
+  border: @border-width solid @gray-3;
+  border-radius: @border-radius-base;
+}
+
+.input-size-sm .rain-input-inner {
+  padding: @padding-y-sm @padding-x-sm;
+  font-size: @font-size-sm;
+  border-radius: @border-radius-sm;
+}
+
+.input-size-lg .rain-input-inner {
+  padding: @padding-y-lg @padding-x-lg;
+  font-size: @font-size-lg;
+  border-radius: @border-radius-lg;
+}
