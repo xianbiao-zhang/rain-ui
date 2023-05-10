@@ -1,5 +1,5 @@
 ---
-title: Input 输入框
+title: Upload 上传文件
 order: 0
 group:
   order: 0
@@ -17,22 +17,6 @@ nav:
 ## 基本样式
 
 <code src="./demo/base.tsx"></code>
-
-## 不同尺寸
-
-<code src="./demo/size.tsx"></code>
-
-## Disabled 状态
-
-<code src="./demo/disabled.tsx"></code>
-
-## 带图标
-
-<code src="./demo/icon.tsx"></code>
-
-## 带前缀后缀
-
-<code src="./demo/fix.tsx"></code>
 
 ## `input[type](config)`config 的配置项
 

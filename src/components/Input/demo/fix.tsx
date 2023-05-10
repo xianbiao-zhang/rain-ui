@@ -5,9 +5,8 @@ import { Input } from 'raind';
 const App: FC = () => {
   return (
     <>
-      <Input size="sm" placeholder="小号Input" />
-      <Input placeholder="默认Input" />
-      <Input size="lg" placeholder="大号Input" />
+      <Input placeholder="添加后缀" append=".com" />
+      <Input placeholder="添加前缀" prepend="https//" />
     </>
   );
 };
