@@ -12,8 +12,8 @@ const Input: FC<InputProps> = (props) => {
   const classes = classNames('rain-input-wrapper', {
     'input-disabled': disabled,
     [`input-size-${size}`]: size,
-    'inpit-group': prepend || append,
-    'inpit-group-append': !!append,
+    'input-group': prepend || append,
+    'input-group-append': !!append,
     'input-group-prepend': !!prepend,
   });
 

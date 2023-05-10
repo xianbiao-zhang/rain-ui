@@ -34,6 +34,14 @@ nav:
 
 <code src="./demo/fix.tsx"></code>
 
+## AutoComplete
+
+<code src="../AutoComplete/demo/base.tsx">
+
 ## `input[type](config)`config 的配置项
 
 <API src="./index.tsx"> </API>
+
+## `AutoComplete` config 的配置项
+
+<API src="../AutoComplete/autoComplete.tsx">

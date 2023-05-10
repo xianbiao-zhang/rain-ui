@@ -1,6 +1,7 @@
 import type { FC, ChangeEvent, ReactElement, KeyboardEvent } from 'react';
 import React, { useState, useRef, useEffect } from 'react';
 import classNames from 'classnames';
+import { CSSTransition } from 'react-transition-group';
 import Input from '../Input/input';
 import type { InputProps } from '../Input/interface';
 import { Icon } from 'raind';
@@ -23,7 +24,8 @@ const AutoComplete: FC<AutoCompleteProps> = (props) => {
 
   const [inputValue, setInputValue] = useState(value as string);
   const [suggestions, setSuggestions] = useState<DataSourceType[]>([]);
-  const [loadding, setLoadding] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [showDropdown, setShowDropdown] = useState(false);
   const [highlightIndex, setHighlightIndex] = useState(-1);
   const triggerSearch = useRef(false);
   const componentRef = useRef<HTMLDivElement>(null);
@@ -36,18 +38,26 @@ const AutoComplete: FC<AutoCompleteProps> = (props) => {
     if (debouncedValue && triggerSearch.current) {
       const results = fetchSuggestions(debouncedValue);
       if (results instanceof Promise) {
-        setLoadding(true);
+        setLoading(true);
         results.then((data) => {
-          setLoadding(false);
+          setLoading(false);
           setSuggestions(data);
+          if (data.length > 0) {
+            setShowDropdown(true);
+          }
         });
       } else {
         setSuggestions(results);
+        if (results.length > 0) {
+          setShowDropdown(true);
+        }
       }
     } else {
       setSuggestions([]);
+      setShowDropdown(false);
     }
-  }, [debouncedValue]);
+    setHighlightIndex(-1);
+  }, [debouncedValue, fetchSuggestions]);
 
   const highlight = (index: number) => {
     let tempIdnex = index;
@@ -60,7 +70,7 @@ const AutoComplete: FC<AutoCompleteProps> = (props) => {
 
   const handleSelect = (item: DataSourceType) => {
     setInputValue(item.value);
-    setSuggestions([]);
+    setShowDropdown(false);
     if (onSelect) {
       onSelect(item);
     }
@@ -81,6 +91,7 @@ const AutoComplete: FC<AutoCompleteProps> = (props) => {
         highlight(highlightIndex + 1);
         break;
       case 27:
+        setShowDropdown(false);
         break;
       default:
         break;
@@ -97,34 +108,44 @@ const AutoComplete: FC<AutoCompleteProps> = (props) => {
   };
   const generateDropdown = () => {
     return (
-      <ul className="rain-suggestion-list">
-        {suggestions.map((item, index) => {
-          const cnames = classNames('suggestion-item', {
-            'item-highlighted': index === highlightIndex,
-          });
-          return (
-            <li
-              key={index}
-              className={cnames}
-              onClick={() => {
-                handleSelect(item);
-              }}
-            >
-              {renderTemplate(item)}
-            </li>
-          );
-        })}
-      </ul>
+      <CSSTransition
+        in={showDropdown || loading}
+        timeout={300}
+        appear
+        mountOnEnter
+        classNames={`rain-animation`}
+        unmountOnExit
+      >
+        <ul className="rain-suggestion-list">
+          {loading && (
+            <ul className="suggstions-loading-icon">
+              <Icon icon="spinner" spin />
+            </ul>
+          )}
+          {suggestions.map((item, index) => {
+            const cnames = classNames('suggestion-item', {
+              'item-highlighted': index === highlightIndex,
+            });
+            return (
+              <li
+                key={index}
+                className={cnames}
+                onClick={() => {
+                  handleSelect(item);
+                }}
+              >
+                {renderTemplate(item)}
+              </li>
+            );
+          })}
+        </ul>
+      </CSSTransition>
     );
   };
   return (
     <div className="rain-auto-complete" ref={componentRef}>
       <Input value={inputValue} onChange={handleChange} onKeyDown={handleKeydown} {...restProps} />
-      {loadding && (
-        <ul className="suggstions-loading-icon">
-          <Icon icon="spinner" spin />
-        </ul>
-      )}
+
       {suggestions.length > 0 && generateDropdown()}
     </div>
   );
