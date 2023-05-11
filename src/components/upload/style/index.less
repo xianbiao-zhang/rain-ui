@@ -1,3 +1,60 @@
-.rain-upload-component {
-  display: block;
+@import '../../../styles/variables/index.less';
+@import '../../../styles/color/colors.less';
+
+.rain-upload-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.rain-upload-list-item {
+  position: relative;
+  box-sizing: border-box;
+  min-width: 200px;
+  margin-top: 5px;
+  font-size: 14px;
+  line-height: 1.8;
+  border-radius: 4px;
+  transition: all 0.5s cubic-bezier(0.55, 0, 0.1, 1);
+  &:first-child {
+    margin-top: 10px;
+  }
+  .file-name {
+    margin-right: 40px;
+    margin-left: 5px;
+    svg {
+      margin-right: 5px;
+      color: @gray-6;
+    }
+  }
+  .file-name-error {
+    color: @error-color-8;
+    svg {
+      color: @error-color-8;
+    }
+  }
+  .file-status {
+    position: absolute;
+    top: 0;
+    right: 5px;
+    display: block;
+    line-height: inherit;
+  }
+  .file-actions {
+    position: absolute;
+    top: 0;
+    right: 7px;
+    display: none;
+    line-height: inherit;
+    cursor: pointer;
+  }
+  &:hover {
+    background-color: @gray-3;
+    .file-status {
+      display: none;
+    }
+    .file-actions {
+      display: block;
+    }
+  }
 }
