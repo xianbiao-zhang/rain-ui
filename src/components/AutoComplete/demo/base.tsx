@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 import React from 'react';
 import { AutoComplete } from 'raind';
-import type { DataSourceType } from '../autoComplete';
+import type { DataSourceType } from '../interface';
 
 interface GithubUserProps {
   login: string;

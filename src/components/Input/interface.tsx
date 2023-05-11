@@ -4,27 +4,27 @@ import type { IconProp } from '@fortawesome/fontawesome-svg-core';
 type InputSize = 'lg' | 'sm';
 interface InputProps extends Omit<InputHTMLAttributes<HTMLElement>, 'size'> {
   /**
-   * @description 是否禁用
+   * @description 是否禁用Input
    * @default false
    */
   disabled?: boolean;
   /**
-   * @description 输入框大小 sz | lg
+   * @description 设置 input 大小，支持 lg 或者是 sm
    * @default default
    */
   size?: InputSize;
   /**
-   * @description 图标
+   * @description 添加图标，在右侧悬浮添加一个图标，用于提示
    * @default null
    */
   icon?: IconProp;
   /**
-   * @description 自定义前缀
+   * @description 添加前缀，用于配置一些固定组合
    * @default null
    */
   prepend?: string | ReactElement;
   /**
-   * @description 自定义后缀
+   * @description 添加后缀，用于配置一些固定组合
    * @default null
    */
   append?: string | ReactElement;

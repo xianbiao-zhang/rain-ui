@@ -12,7 +12,7 @@ nav:
 
 # Input 输入框
 
-输入框
+输入框 通过鼠标或键盘输入内容，是最基础的表单域的包装。支持 HTMLInput 的所有属性
 
 ## 基本样式
 
@@ -44,4 +44,4 @@ nav:
 
 ## `AutoComplete` config 的配置项
 
-<API src="../AutoComplete/autoComplete.tsx">
+<API src="../AutoComplete/index.tsx">
