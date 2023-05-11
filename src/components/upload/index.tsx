@@ -1,8 +1,8 @@
-import type { ChangeEvent, FC} from 'react';
+import type { ChangeEvent, FC } from 'react';
 import React, { useRef, useState } from 'react';
 import axios from 'axios';
 import UploadList from './uploadList';
-import { Button } from 'raind';
+import { Dragger } from './dragger';
 import './style/index.less';
 import type { UploadProps, UploadFile } from './interface';
 
@@ -16,6 +16,14 @@ const Upload: FC<UploadProps> = (props) => {
     onError,
     onChange,
     onRemove,
+    headers,
+    name,
+    data,
+    withCredentials,
+    accept,
+    multiple,
+    drag,
+    Children,
   } = props;
   const fileInput = useRef<HTMLInputElement>(null);
   const [fileList, setFileList] = useState<UploadFile[]>(defaultFileList || []);
@@ -45,14 +53,24 @@ const Upload: FC<UploadProps> = (props) => {
       percent: 0,
       raw: file,
     };
-    setFileList([_file, ...fileList]);
+    //setFileList([_file, ...fileList]);
+    setFileList((prevList) => {
+      return [_file, ...prevList];
+    });
     const formData = new FormData();
-    formData.append(file.name, file);
+    formData.append(name || 'file', file);
+    if (data) {
+      Object.keys(data).forEach((key) => {
+        formData.append(key, data[key]);
+      });
+    }
     axios
       .post(action, formData, {
         headers: {
+          ...headers,
           'Content-Type': 'multpart/form-data',
         },
+        withCredentials,
         onUploadProgress: (e) => {
           if (!e.total) {
             return;
@@ -124,19 +142,37 @@ const Upload: FC<UploadProps> = (props) => {
 
   return (
     <div className="rain-upload-component">
-      <Button type="primary" onClick={handleClick}>
+      {/* <Button type="primary" onClick={handleClick}>
         Upload File
-      </Button>
-      <input
-        className="rain-file-input"
-        style={{ display: 'none' }}
-        ref={fileInput}
-        onChange={handleFileChange}
-        type="file"
-      />
+      </Button> */}
+      <div className="rain-upload-input" style={{ display: 'inline-block' }} onClick={handleClick}>
+        {drag ? (
+          <Dragger
+            onFile={(files) => {
+              uploadFiles(files);
+            }}
+          >
+            {Children}
+          </Dragger>
+        ) : (
+          Children
+        )}
+        <input
+          className="rain-file-input"
+          style={{ display: 'none' }}
+          ref={fileInput}
+          onChange={handleFileChange}
+          type="file"
+          accept={accept}
+          multiple={multiple}
+        />
+      </div>
       <UploadList fileList={fileList} onRemove={handleRemove} />
     </div>
   );
 };
 
+Upload.defaultProps = {
+  name: 'file',
+};
 export default Upload;

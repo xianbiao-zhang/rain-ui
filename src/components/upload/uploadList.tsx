@@ -2,6 +2,7 @@ import type { FC } from 'react';
 import React from 'react';
 import type { UploadFile } from './interface';
 import { Icon } from 'raind';
+import Progress from './progress';
 
 interface UploadListProps {
   fileList: UploadFile[];
@@ -33,6 +34,7 @@ const UploadList: FC<UploadListProps> = (props) => {
                 }}
               />
             </span>
+            {item.status === 'uploadding' && <Progress percent={item.percent || 0} />}
           </li>
         );
       })}

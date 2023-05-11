@@ -7,6 +7,14 @@ interface UploadProps {
   onError?: (err: any, file: File) => void;
   onChange?: (file: File) => void;
   onRemove?: (file: UploadFile) => void;
+  headers?: Record<string, any>;
+  name?: string;
+  data?: Record<string, any>;
+  withCredentials?: boolean;
+  accept?: string;
+  multiple?: boolean;
+  drag?: boolean;
+  Children?: any;
 }
 
 type UploadFileStatus = 'ready' | 'uploadding' | 'success' | 'error';
