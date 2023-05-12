@@ -7,6 +7,24 @@
   list-style-type: none;
 }
 
+.rain-uploader-dragger {
+  width: 360px;
+  height: 180px;
+  padding: 20px;
+  text-align: center;
+  background: @gray-2;
+  border: 1px dashed @gray-4;
+  border-radius: 4px;
+  cursor: pointer;
+  &:hover {
+    border: 1px dashed @primary-color;
+  }
+  &.is-dragover {
+    background: rgba(@primary-color, 0.2);
+    border: 2px dashed @primary-color;
+  }
+}
+
 .rain-upload-list-item {
   position: relative;
   box-sizing: border-box;
@@ -25,6 +43,24 @@
     svg {
       margin-right: 5px;
       color: @gray-6;
+    }
+  }
+  .file-name-ready {
+    color: @primary-color-8;
+    svg {
+      color: @primary-color-8;
+    }
+  }
+  .file-name-uploadding {
+    color: @primary-color-8;
+    svg {
+      color: @primary-color-8;
+    }
+  }
+  .file-name-success {
+    color: @success-color-8;
+    svg {
+      color: @success-color-8;
     }
   }
   .file-name-error {
@@ -56,5 +92,45 @@
     .file-actions {
       display: block;
     }
+  }
+}
+
+.rain-progress-bar {
+  box-sizing: border-box;
+  width: 100%;
+  .rain-progress-bar-outer {
+    position: relative;
+    overflow: hidden;
+    background-color: @gray-3;
+    border-radius: 0.25rem;
+  }
+  .rain-progress-bar-inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: 100%;
+    line-height: 1;
+    border-radius: 0.23rem;
+    transform: width 0.6s ease;
+    .inner-text {
+      margin: 0 5px;
+      color: #fff;
+      font-size: 14px * 0.75;
+    }
+  }
+  .color-primary {
+    background-color: @primary-color;
+  }
+  .color-success {
+    background-color: @success-color;
+  }
+  .color-warning {
+    background-color: @warning-color;
+  }
+  .color-error {
+    background-color: @error-color;
   }
 }

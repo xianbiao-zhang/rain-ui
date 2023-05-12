@@ -10,11 +10,6 @@ interface GithubUserProps {
 }
 
 const App: FC = () => {
-  // const lakers = ['bardley', 'pope', 'caruso', 'cook', 'cousins', 'james', 'AD', 'greeen', 'howard',
-  // 'green', 'howard', 'kuzma', 'McGee', 'rando']
-  // const handleFetch = (query:string) => {
-  //     return lakers.filter(name => name.includes(query))
-  // }
   const handleFetch = (query: string) => {
     return fetch(`https://api.github.com/search/users?q=${query}`)
       .then((res) => res.json())
@@ -23,12 +18,6 @@ const App: FC = () => {
         return items.slice(0, 10).map((item: any) => ({ value: item.login, ...item }));
       });
   };
-  // const testArray = [
-  //     {value: 'ab', number: 11},
-  //     {value: 'abc', number: 1},
-  //     {value: 'b', number: 4},
-  //     {value: 'c', number: 15},
-  // ]
   const renderOption = (item: DataSourceType<GithubUserProps>) => {
     return (
       <>

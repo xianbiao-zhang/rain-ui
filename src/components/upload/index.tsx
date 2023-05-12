@@ -23,7 +23,7 @@ const Upload: FC<UploadProps> = (props) => {
     accept,
     multiple,
     drag,
-    Children,
+    children,
   } = props;
   const fileInput = useRef<HTMLInputElement>(null);
   const [fileList, setFileList] = useState<UploadFile[]>(defaultFileList || []);
@@ -152,10 +152,10 @@ const Upload: FC<UploadProps> = (props) => {
               uploadFiles(files);
             }}
           >
-            {Children}
+            {children}
           </Dragger>
         ) : (
-          Children
+          children
         )}
         <input
           className="rain-file-input"
@@ -175,4 +175,5 @@ const Upload: FC<UploadProps> = (props) => {
 Upload.defaultProps = {
   name: 'file',
 };
+
 export default Upload;

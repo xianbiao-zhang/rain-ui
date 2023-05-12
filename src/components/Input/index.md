@@ -3,8 +3,8 @@ title: Input 输入框
 order: 0
 group:
   order: 0
-  title: 通用
-  path: /common
+  title: 提交数据
+  path: /updata
 nav:
   title: 组件
   path: /components
@@ -34,14 +34,4 @@ nav:
 
 <code src="./demo/fix.tsx"></code>
 
-## AutoComplete
-
-<code src="../AutoComplete/demo/base.tsx">
-
-## `input[type](config)`config 的配置项
-
 <API src="./index.tsx"> </API>
-
-## `AutoComplete` config 的配置项
-
-<API src="../AutoComplete/index.tsx">

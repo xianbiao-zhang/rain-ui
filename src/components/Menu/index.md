@@ -3,8 +3,8 @@ title: Menu 菜单
 order: 0
 group:
   order: 0
-  title: 通用
-  path: /common
+  title: 导航
+  path: /nav
 nav:
   title: 组件
   path: /components

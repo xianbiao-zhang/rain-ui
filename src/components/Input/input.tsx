@@ -2,7 +2,7 @@ import type { FC } from 'react';
 import React from 'react';
 
 import classNames from 'classnames';
-import Icon from '../Icon/icon';
+import Icon from '../Icon';
 import type { InputProps } from './interface';
 
 const Input: FC<InputProps> = (props) => {

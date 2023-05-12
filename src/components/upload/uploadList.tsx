@@ -18,13 +18,15 @@ const UploadList: FC<UploadListProps> = (props) => {
         return (
           <li className="rain-upload-list-item" key={item.uid}>
             <span className={`file-name file-name-${item.status}`}>
-              <Icon icon="file-alt" />
+              <Icon icon="file-alt" theme="success" />
               {item.name}
             </span>
             <span className="file-status">
-              {item.status === 'uploadding' && <Icon icon="spinner" />}
-              {item.status === 'success' && <Icon icon="check-circle" />}
-              {item.status === 'error' && <Icon icon="times-circle" />}
+              {(item.status === 'uploadding' || item.status === 'ready') && (
+                <Icon icon="spinner" spin theme="primary" />
+              )}
+              {item.status === 'success' && <Icon icon="check-circle" theme="success" />}
+              {item.status === 'error' && <Icon icon="times-circle" theme="error" />}
             </span>
             <span className="file-actions">
               <Icon
