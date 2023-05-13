@@ -1,5 +1,5 @@
 import type { FC } from 'react';
-import type { MenuProps } from './menu';
+import type { MenuProps } from './interface';
 import Menu from './menu';
 import type { SubMenuProps } from './subMenu';
 import SubMenu from './subMenu';

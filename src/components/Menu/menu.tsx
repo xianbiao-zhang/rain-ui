@@ -1,20 +1,9 @@
-import type { ReactNode } from 'react';
 import React, { createContext, useState } from 'react';
 import classNames from 'classnames';
 import type { MenuItemProps } from './menuItem';
+import type { MenuProps, MenuMode } from './interface';
 
-type MenuMode = 'horizontal' | 'vertical';
-export interface MenuProps {
-  defaultIndex?: string;
-  className?: string;
-  mode?: MenuMode;
-  style?: React.CSSProperties;
-  onSelect?: (selectedIndex: string) => void;
-  defaultOpenSubMenus?: string[];
-  children?: ReactNode;
-}
-
-interface IMenuContext {
+export interface IMenuContext {
   index: string;
   onSelect?: (selectedIndex: string) => void;
   mode?: MenuMode;

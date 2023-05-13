@@ -2,7 +2,7 @@ import React from 'react';
 import { Menu } from 'raind';
 const App: React.FC = () => {
   return (
-    <Menu>
+    <Menu mode="vertical">
       <Menu.Item>item link</Menu.Item>
       <Menu.Item>item link 2</Menu.Item>
       <Menu.Item disabled>disabled</Menu.Item>

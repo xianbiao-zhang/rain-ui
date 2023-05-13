@@ -12,12 +12,18 @@ nav:
 
 # Menu 菜单
 
-按钮，用于开始一个操作
+为网站提供导航功能的菜单。支持横向纵向两种模式，支持下拉菜单
 
-rain-ui 在 button 中添加了很多小细节，比如 hover 和 active 的颜色取自于由 primary-color 生成的色板，颜色和谐，再点击后还会有一个阴影的效果，不同类型的按钮有不同的效果
-
-rain-ui 根据当前色彩计算设置暗色主题之后的颜色，以及紧凑模式，点击右下角试试叭~
-
-## 按钮类型
+## 基础样式
 
 <code src="./demo/base.tsx"></code>
+
+## 纵向的 Menu
+
+<code src="./demo/vertical.tsx"></code>
+
+## 默认展开的纵向 Menu
+
+<code src="./demo/expansion.tsx"></code>
+
+<API src="./index.tsx"></API>
