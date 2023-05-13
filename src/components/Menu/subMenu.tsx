@@ -3,6 +3,7 @@ import React, { useContext, useState } from 'react';
 import classNames from 'classnames';
 import { MenuContext } from './menu';
 import type { MenuItemProps } from './menuItem';
+import { Icon } from 'raind';
 
 export interface SubMenuProps {
   index?: string;
@@ -70,6 +71,7 @@ export const SubMenu: FC<SubMenuProps> = ({ index, title, children, className })
     <li key={index} className={classes} {...hoverEvents}>
       <div className="submenu-title" {...clickEvents}>
         {title}
+        <Icon icon="angle-down" className="arrow-icon" />
       </div>
       {renderChildren()}
     </li>
