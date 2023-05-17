@@ -1,0 +1,56 @@
+@import '../../../styles/variables/index.less';
+
+.rain-form {
+  .rain-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+    &.rain-row-no-label {
+      flex-direction: row-reverse;
+    }
+    .rain-form-item-label {
+      flex-basis: 30%;
+      padding-right: 20px;
+      text-align: right;
+      > label {
+        margin-bottom: 0;
+      }
+      > label.rain-form-item-required::before {
+        display: inline-block;
+        margin-right: 4px;
+        color: red;
+        font-size: 14px;
+        font-family: SimSun, sans-serif;
+        line-height: 1;
+        content: '*';
+      }
+    }
+    .rain-form-item {
+      position: relative;
+      flex-basis: 70%;
+      .rain-input-wrapper {
+        margin-bottom: 0;
+      }
+      .rain-form-item-has-error.rain-form-item-control {
+        .rain-input-inner {
+          border: 1px solid red;
+          &:focus {
+            border: 1px solid red;
+          }
+        }
+      }
+      .rain-form-item-explain {
+        position: absolute;
+        bottom: -25px;
+        left: 0;
+        color: red;
+        line-height: 25px;
+      }
+    }
+  }
+  .rain-form-submit-area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

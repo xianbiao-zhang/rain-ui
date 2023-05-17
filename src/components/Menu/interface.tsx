@@ -27,4 +27,39 @@ interface MenuProps {
   children?: ReactNode;
 }
 
-export { MenuProps, MenuMode };
+interface MenuItemProps {
+  index?: string;
+  /**
+   * @description       选项是否被禁用
+   * @default           false
+   */
+  disabled?: boolean;
+  /**
+   * @description       选项扩展的 className
+   * @default           -
+   */
+  className?: string;
+  /**
+   * @description       选项自定义的 style
+   * @default           -
+   */
+  style?: React.CSSProperties;
+  children?: ReactNode;
+}
+
+interface SubMenuProps {
+  index?: string;
+  /**
+   * @description       下拉菜单选项的文字
+   * @default           -
+   */
+  title: string;
+  /**
+   * @description       下拉菜单选项的扩展类名
+   * @default           -
+   */
+  className?: string;
+  children?: ReactNode;
+}
+
+export { MenuProps, MenuMode, MenuItemProps, SubMenuProps };

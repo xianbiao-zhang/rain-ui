@@ -26,4 +26,14 @@ nav:
 
 <code src="./demo/expansion.tsx"></code>
 
-<API src="./index.tsx"></API>
+## Menu
+
+<API src="./menu.tsx"></API>
+
+## menuItem
+
+<API src="./menuItem.tsx"></API>
+
+## subMenu
+
+<API src="./subMenu.tsx"></API>

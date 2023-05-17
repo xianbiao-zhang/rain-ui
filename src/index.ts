@@ -14,3 +14,5 @@ export { default as Icon } from './components/Icon';
 export { default as Input } from './components/Input';
 export { default as AutoComplete } from './components/AutoComplete';
 export { default as Upload } from './components/upload';
+export { default as Form } from './components/form/form';
+export { default as FormItem } from './components/form/formItem';

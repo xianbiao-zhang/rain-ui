@@ -1,15 +1,8 @@
-import type { FC, ReactNode } from 'react';
+import type { FC } from 'react';
 import React, { useContext } from 'react';
 import classNames from 'classnames';
 import { MenuContext } from './menu';
-
-export interface MenuItemProps {
-  index?: string;
-  disabled?: boolean;
-  className?: string;
-  style?: React.CSSProperties;
-  children?: ReactNode;
-}
+import type { MenuItemProps } from './interface';
 
 export const MenuItem: FC<MenuItemProps> = (props) => {
   const { index, disabled, className, style, children } = props;

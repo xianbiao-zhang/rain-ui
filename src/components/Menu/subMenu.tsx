@@ -1,16 +1,9 @@
-import type { FC, FunctionComponentElement, ReactNode } from 'react';
+import type { FC, FunctionComponentElement } from 'react';
 import React, { useContext, useState } from 'react';
 import classNames from 'classnames';
 import { MenuContext } from './menu';
-import type { MenuItemProps } from './menuItem';
+import type { MenuItemProps, SubMenuProps } from './interface';
 import { Icon } from 'raind';
-
-export interface SubMenuProps {
-  index?: string;
-  title: string;
-  className?: string;
-  children?: ReactNode;
-}
 
 export const SubMenu: FC<SubMenuProps> = ({ index, title, children, className }) => {
   const context = useContext(MenuContext);
