@@ -49,11 +49,3 @@ jobs:
         run: CI=false yarn docs:build
       - name: 查看文件
         run: ls -a # 查看打包后的目录文件
-      - name: oss上传
-        uses: appleboy/scp-action@master
-        with:
-          host: ${{ secrets.HOST }} # 服务器host
-          username: ${{ secrets.USER }} # 服务器用户名
-          password: ${{ secrets.PASSWORD }} # 服务器密码
-          source: 'docs-dist' # 需要上传的文件, 多文件使用逗号隔开
-          target: '/apps/rain-ui/' # 上传到服务器的什么位置
