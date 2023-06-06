@@ -1,5 +1,5 @@
 import { defineConfig } from 'dumi';
-
+const APP_NAME = 'rain-ui';
 export default defineConfig({
   title: 'Rain-ui',
   mode: 'site',
@@ -36,4 +36,6 @@ export default defineConfig({
     },
   ],
   // more config: https://d.umijs.org/config
+  base: process.env.NODE_ENV === 'production' ? `/${APP_NAME}/` : '/',
+  publicPath: process.env.NODE_ENV === 'production' ? `/${APP_NAME}/` : '/',
 });
