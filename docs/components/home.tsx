@@ -32,7 +32,7 @@ export default () => {
       <div className="alert">
         <div className="alertContainer">
           <span>Rain-ui 期待更多小伙伴的加入 👏</span>
-          <a target="_blank" href="https://github.com/liufashi-Mr/rain-ui">
+          <a target="_blank" href="https://github.com/xianbiao-zhang/rain-ui" rel="noreferrer">
             <GithubOutlined style={{ marginRight: 8 }} />
             前往
             <RightOutlined style={{ marginLeft: 4 }} />
@@ -89,7 +89,9 @@ export default () => {
             <p className={'buttons'}>
               <Link to="/guide">使用指南</Link>
               <Link to="/components">组件</Link>
-              <a target="_blank" href="https://github.com/liufashi-Mr/rain-ui">在Github上查看</a>
+              <a target="_blank" href="https://github.com/xianbiao-zhang/rain-ui" rel="noreferrer">
+                在Github上查看
+              </a>
             </p>
           </div>
         </div>

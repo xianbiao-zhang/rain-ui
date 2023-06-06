@@ -27,12 +27,8 @@ export default defineConfig({
   navs: [
     null, // null 值代表保留约定式生成的导航，只做增量配置
     {
-      title: '博客',
-      path: 'https://blog.liufashi.top/',
-    },
-    {
       title: 'GitHub',
-      path: 'https://github.com/liufashi-Mr/rain-ui',
+      path: 'https://github.com/xianbiao-zhang/rain-ui',
     },
   ],
   // more config: https://d.umijs.org/config
